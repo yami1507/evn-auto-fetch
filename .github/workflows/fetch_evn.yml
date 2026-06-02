@@ -1,0 +1,32 @@
+name: Fetch EVN NPC Electricity Data
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch-electricity:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+      
+      - name: Run EVN fetch script
+        run: python EVN.py
+      
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: evn-data
+          path: ./*.json
