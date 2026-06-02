@@ -7,8 +7,8 @@ import datetime
 from datetime import datetime
 from datetime import timedelta, date
 from requests.structures import CaseInsensitiveDict
-Ma_Khach_Hang = "PA23*********0" #Mã Khách Hàng EVN Miền Bắc, thay mã khách hàng của bạn tại đây
-Mat_Khau = "******"             #Mật Khẩu Đăng nhập App EVNNPC.CSKH
+Ma_Khach_Hang = "PA03CP0007468" #Mã Khách Hàng EVN Miền Bắc, thay mã khách hàng của bạn tại đây
+Mat_Khau = "9M5WFD"             #Mật Khẩu Đăng nhập App EVNNPC.CSKH
 MaVung = Ma_Khach_Hang[0:6]
 #MaDiemDo = Ma_Khach_Hang+"001"
 SetNgayThang = datetime.now().strftime('%d-%m-%Y')
